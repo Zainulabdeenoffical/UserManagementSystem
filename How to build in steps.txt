@@ -1,0 +1,14 @@
+Task List 
+!) Create a new folder named Models if it doesn’t already exist.
+2) create class on model  with .cs
+3) create a data folder for Connection
+4) create a cs class in data folder 
+5) add create constructor of that class inherit from  DbContext
+6) and in thats class alsoe add data base table thats define attributes of data in database
+table 
+7) go to  setting.jeson and create add  create connection string object and add connection string 
+and  database name 
+8)create new controller  in controller folder
+9) create new folder user inside in view 
+10) and create cshtml and design ur page 
+11) and add thats page funcationallty on controller  class 

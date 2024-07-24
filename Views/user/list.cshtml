@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<UserManagementSystem.Models.Entites.User>
+<h1>Users Information </h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th> Frist Name</th>
+        <th> last Name </th>
+        <th> Email</th>
+        <th> </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Frist_name</td>
+                <td>@user.last_name</td>
+                <td>@user.Email</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="User" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

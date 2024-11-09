@@ -16,7 +16,7 @@ This User Management System is built using .NET Core MVC framework and allows fo
 - **Frontend:** Razor Views with Bootstrap (or specify your preferred frontend framework)
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/Zainulabdeenoffical/UserManagementSystem`
+1. Clone the repository: `git clone https://github.com/Zainulabdeenoffical/UserManagementSystem.git`
 2. Open the solution in Visual Studio or your preferred IDE.
 3. Restore NuGet packages if necessary.
 4. Configure your database connection string in `appsettings.json`.

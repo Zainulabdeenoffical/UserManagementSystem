@@ -20,3 +20,64 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*  Loader CSS*/
+
+/* Ensure the box-sizing is set for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Container for the loading spinner */
+.loading-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Light background */
+    z-index: 1000; /* Ensure it is on top */
+}
+
+/* Styling the spinner */
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #555;
+    display: none; 
+}
+
+.spinner {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+

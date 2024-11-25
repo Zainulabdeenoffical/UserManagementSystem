@@ -1,4 +1,5 @@
 ﻿
+using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -170,19 +171,48 @@ namespace UserManagementSystem.Controllers
         }
         public JsonResult update(Guid id)
         {
+            if (id == Guid.Empty)
+            {
+                return new JsonResult("Invalid ID provided.");
+            }
 
             var data = dbContext.User.Where(e => e.Id == id).SingleOrDefault();
             if (data != null)
             {
-                return new JsonResult(data);
+                var result = new
+                {
+                    success = true,
+                    userid = data.Id,
+                    fname = data.First_name,
+                    lname = data.Last_name,
+                     em = data.Email,
+                };
+                dbContext.SaveChanges();
+                return new JsonResult(result);
+               
             }
-            return new JsonResult("please Fill the blanks");
+            else
+            {
+                return new JsonResult("No user found with the provided ID.");
+            }
+           
             
 
         }
-            
-       
-        
+        [HttpPost]
+
+        public JsonResult update_meth([FromBody] User user)
+        {
+            if (user == null)
+            {
+                return new JsonResult("Invalid user data") { StatusCode = 400 };
+            }
+            dbContext.User.Update(user);
+            dbContext.SaveChanges();
+            return new JsonResult("Record updated");
+        }
+
+
 
 
 
